@@ -1,0 +1,18 @@
+@import "tailwindcss";
+
+/* Custom styles */
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #f8fafc;
+}
+
+.header {
+  background-color: #4f46e5;
+  color: #ffffff;
+  padding: 1rem;
+  text-align: center;
+}
+
+.lang-hi {
+  font-family: 'Noto Sans Devanagari', sans-serif;
+}
