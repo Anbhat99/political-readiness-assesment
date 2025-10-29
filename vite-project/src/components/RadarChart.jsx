@@ -1,37 +1,39 @@
 import { Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, ResponsiveContainer } from 'recharts';
 
 const RadarChartComponent = ({ scores }) => {
-  // Prepare data for Recharts
+  // Use scores directly (already reversed in QuestionForm)
   const data = [
-    { capital: 'Intellectual', score: 5 - scores['Intellectual'] },
-    { capital: 'Political', score: 5 - scores['Political'] },
-    { capital: 'Social', score: 5 - scores['Social'] },
-    { capital: 'Financial', score: 5 - scores['Financial'] },
-    { capital: 'Network', score: 5 - scores['Network'] },
-    { capital: 'Moral', score: 5 - scores['Moral'] },
+    { capital: 'Intellectual', score: parseFloat(scores['Intellectual']) || 0 },
+    { capital: 'Political', score: parseFloat(scores['Political']) || 0 },
+    { capital: 'Social', score: parseFloat(scores['Social']) || 0 },
+    { capital: 'Financial', score: parseFloat(scores['Financial']) || 0 },
+    { capital: 'Network', score: parseFloat(scores['Network']) || 0 },
+    { capital: 'Moral', score: parseFloat(scores['Moral']) || 0 },
   ];
 
   return (
     <div className="w-full h-96">
       <ResponsiveContainer width="100%" height="100%">
         <RadarChart data={data}>
-          <PolarGrid gridType="polygon" stroke="#e0e7ff" />
+          <PolarGrid stroke="#e0e7ff" />
           <PolarAngleAxis
             dataKey="capital"
-            tick={{ fill: '#1f2937', fontFamily: "'Inter', sans-serif", fontSize: 14 }}
+            tick={{ fill: '#1f2937', fontSize: 14, fontWeight: 500 }}
           />
           <PolarRadiusAxis
             angle={90}
             domain={[0, 4]}
-            tick={{ fill: '#1f2937', fontFamily: "'Inter', sans-serif", fontSize: 12 }}
-            tickFormatter={(value) => 5 - value} // Invert for display
+            tickCount={5}
+            tick={{ fill: '#1f2937', fontSize: 12 }}
+            // No inversion needed — scores are already 1–4
           />
           <Radar
             name="Political Readiness"
             dataKey="score"
             stroke="#4f46e5"
-            fill="rgba(79, 70, 229, 0.2)"
+            fill="#4f46e5"
             fillOpacity={0.6}
+            dot={{ r: 4, fill: '#4f46e5' }}
           />
         </RadarChart>
       </ResponsiveContainer>
