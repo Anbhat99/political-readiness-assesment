@@ -10,9 +10,13 @@ const QuestionForm = () => {
   const [name, setName] = useState('');
   const navigate = useNavigate();
 
-  // Save answer + auto-advance
+  // Functional update to avoid stale state
   const handleAnswer = (questionId, score) => {
-    setResponses(prev => ({ ...prev, [questionId]: score }));
+    setResponses(prev => {
+      const updated = { ...prev, [questionId]: score };
+      return updated;
+    });
+
     if (currentQuestion < questions.length - 1) {
       setCurrentQuestion(currentQuestion + 1);
     }
@@ -29,7 +33,6 @@ const QuestionForm = () => {
     if (currentQuestion > 0) setCurrentQuestion(currentQuestion - 1);
   };
 
-  // Only submit if ALL questions answered
   const submitQuiz = () => {
     const allAnswered = questions.every(q => responses[q.id] !== undefined);
     if (allAnswered) {
@@ -38,7 +41,7 @@ const QuestionForm = () => {
     }
   };
 
-  // REVERSED SCORING: 1→4, 2→3, 3→2, 4→1
+  // REVERSED SCORING: Top = 4, Bottom = 1
   const calculateScores = (responses) => {
     const capitals = ['Intellectual', 'Political', 'Social', 'Financial', 'Network', 'Moral'];
     const scores = {};
@@ -51,7 +54,7 @@ const QuestionForm = () => {
       qs.forEach(q => {
         const s = responses[q.id];
         if (s !== undefined) {
-          total += (5 - s);  // ← REVERSED: top (1) = 4, bottom (4) = 1
+          total += (5 - s);  // ← REVERSED: 1→4, 2→3, 3→2, 4→1
           count++;
         }
       });
@@ -74,7 +77,7 @@ const QuestionForm = () => {
         placeholder={t.welcome}
         value={name}
         onChange={(e) => setName(e.target.value)}
-        className="w-full p-3 border border-gray-300 rounded-lg mb-8 text-lg focus:ring-2 focus:ring-indigo-500 focus:outline-none"
+        className="w-full p-3 border border-gray-300 rounded-lg mb-8 text-lg focus:ring-2 focus:ring-indigo-500"
       />
 
       <div className="bg-white p-6 rounded-xl shadow-md border">
@@ -107,14 +110,14 @@ const QuestionForm = () => {
 
         <div className="mt-8 flex justify-between items-center">
           <p className="text-sm text-gray-600 font-medium">
-            Answered: {Object.keys(res coponses).length} / {questions.length}
+            Answered: {Object.keys(responses).length} / {questions.length}
           </p>
 
           <div className="space-x-2">
             {currentQuestion > 0 && (
               <button
                 onClick={goBack}
-                className="px-5 py-2 bg-gray-200 hover:bg-gray-300 rounded-lg text-sm font-medium transition"
+                className="px-5 py-2 bg-gray-200 hover:bg-gray-300 rounded-lg text-sm font-medium"
               >
                 Back
               </button>
@@ -124,7 +127,7 @@ const QuestionForm = () => {
               <button
                 onClick={goNext}
                 disabled={!isAnswered}
-                className={`px-5 py-2 rounded-lg text-sm font-medium transition
+                className={`px-5 py-2 rounded-lg text-sm font-medium
                   ${isAnswered
                     ? 'bg-indigo-600 hover:bg-indigo-700 text-white'
                     : 'bg-gray-300 text-gray-500 cursor-not-allowed'
@@ -136,7 +139,7 @@ const QuestionForm = () => {
               <button
                 onClick={submitQuiz}
                 disabled={!isAnswered}
-                className={`px-6 py-2 rounded-lg font-medium transition
+                className={`px-6 py-2 rounded-lg font-medium
                   ${isAnswered
                     ? 'bg-green-600 hover:bg-green-700 text-white'
                     : 'bg-gray-300 text-gray-500 cursor-not-allowed'
@@ -148,7 +151,6 @@ const QuestionForm = () => {
           </div>
         </div>
 
-        {/* Progress Bar */}
         <div className="mt-6">
           <div className="w-full bg-gray-200 rounded-full h-3">
             <div
