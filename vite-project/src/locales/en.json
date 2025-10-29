@@ -7,137 +7,133 @@
       "capital": "Intellectual",
       "text": "When a complex issue like unemployment or waste management arises in your constituency, what’s your first response?",
       "options": [
-        { "text": "I bring together local experts and citizens to co-create solutions and implement them.", "score": 1 },
-        { "text": "I study successful examples from other regions and adapt them locally.", "score": 2 },
-        { "text": "I consult my team or local officials for advice and depend on their suggestions.", "score": 3 },
-        { "text": "I wait for higher authorities or my party to guide or intervene.", "score": 4 }
+        { "text": "I bring together local experts and citizens to co-create solutions and implement them.", "score": 4 },
+        { "text": "I study successful examples from other regions and adapt them locally.", "score": 3 },
+        { "text": "I consult my team or local officials for advice and depend on their suggestions.", "score": 2 },
+        { "text": "I wait for higher authorities or my party to guide or intervene.", "score": 1 }
       ]
     },
     {
       "id": "Q2",
       "capital": "Intellectual",
-      "text": "When a government scheme has low uptake in your area, how do you help citizens access it?",
+      "text": "How often do you engage with research, data, or policy papers to inform your decisions?",
       "options": [
-        { "text": "I personally study the scheme, identify barriers, and mobilize local volunteers to spread awareness.", "score": 1 },
-        { "text": "I delegate the work to my team but track progress regularly.", "score": 2 },
-        { "text": "I inform citizens when they approach me but don’t take active steps.", "score": 3 },
-        { "text": "I assume people will figure it out themselves or the government will handle it.", "score": 4 }
+        { "text": "Regularly, I actively seek out and use evidence-based insights.", "score": 4 },
+        { "text": "Occasionally, when relevant reports are brought to my attention.", "score": 3 },
+        { "text": "Rarely, I rely on my team to summarize key points.", "score": 2 },
+        { "text": "Never, I trust my instincts or party guidance.", "score": 1 }
       ]
     },
     {
       "id": "Q3",
       "capital": "Political",
-      "text": "If your party is deciding candidates for the upcoming elections, how do you engage in that process?",
+      "text": "How do you approach building coalitions or gaining support for your initiatives?",
       "options": [
-        { "text": "I actively engage with party leaders, share constituency insights, and build consensus on candidate selection.", "score": 1 },
-        { "text": "I stay in contact with key decision-makers and express my interest or recommendations.", "score": 2 },
-        { "text": "I wait to see how internal politics unfold and react accordingly.", "score": 3 },
-        { "text": "I stay neutral and avoid any involvement.", "score": 4 }
+        { "text": "I proactively build alliances across parties and stakeholders.", "score": 4 },
+        { "text": "I work within my party but reach out to others when needed.", "score": 3 },
+        { "text": "I rely on my party’s leadership to guide coalition efforts.", "score": 2 },
+        { "text": "I avoid coalitions and focus on my own agenda.", "score": 1 }
       ]
     },
     {
       "id": "Q4",
       "capital": "Political",
-      "text": "When two groups in your party disagree on an issue, what role do you play?",
+      "text": "How comfortable are you navigating political opposition or criticism?",
       "options": [
-        { "text": "I mediate the discussion and help both groups find a common ground.", "score": 1 },
-        { "text": "I listen to both sides and support the one closer to my view.", "score": 2 },
-        { "text": "I avoid getting involved to protect my own image.", "score": 3 },
-        { "text": "I side with whoever seems more powerful to maintain my position.", "score": 4 }
+        { "text": "Very comfortable, I engage constructively and find common ground.", "score": 4 },
+        { "text": "Somewhat comfortable, I address it but prefer to avoid conflict.", "score": 3 },
+        { "text": "Uncomfortable, I rely on others to handle opposition.", "score": 2 },
+        { "text": "I avoid opposition and stick to safe topics.", "score": 1 }
       ]
     },
     {
       "id": "Q5",
       "capital": "Social",
-      "text": "During a festival or public event, how do you engage with your community?",
+      "text": "How often do you engage directly with your constituents (e.g., town halls, community events)?",
       "options": [
-        { "text": "I interact deeply with people, listen to their issues, and strengthen personal connections.", "score": 1 },
-        { "text": "I attend briefly to show presence and greet key people.", "score": 2 },
-        { "text": "I send my team to represent me and collect feedback.", "score": 3 },
-        { "text": "I avoid large gatherings and prefer not to attend.", "score": 4 }
+        { "text": "Frequently, I prioritize face-to-face interactions.", "score": 4 },
+        { "text": "Occasionally, when my schedule allows.", "score": 3 },
+        { "text": "Rarely, I rely on my team to gather community feedback.", "score": 2 },
+        { "text": "Never, I focus on higher-level priorities.", "score": 1 }
       ]
     },
     {
       "id": "Q6",
       "capital": "Social",
-      "text": "When a team member faces a personal challenge, how do you respond as a leader?",
+      "text": "How do you ensure diverse voices in your community are heard?",
       "options": [
-        { "text": "I offer personal support, ensure they feel cared for, and motivate the rest of the team.", "score": 1 },
-        { "text": "I check in once or twice but focus mostly on ongoing work.", "score": 2 },
-        { "text": "I express sympathy but expect them to manage their own situation.", "score": 3 },
-        { "text": "I avoid involvement as it’s not part of my role.", "score": 4 }
+        { "text": "I actively seek out and include marginalized groups.", "score": 4 },
+        { "text": "I listen to those who approach me directly.", "score": 3 },
+        { "text": "I rely on my team to identify community needs.", "score": 2 },
+        { "text": "I focus on the majority’s needs.", "score": 1 }
       ]
     },
     {
       "id": "Q7",
       "capital": "Financial",
-      "text": "If you suddenly need to organize a political campaign, how would you arrange funds?",
+      "text": "How do you approach securing funding for local projects?",
       "options": [
-        { "text": "I reach out to my trusted network, mobilize small contributions, and ensure transparent use.", "score": 1 },
-        { "text": "I seek help from friends and close supporters to arrange the basics.", "score": 2 },
-        { "text": "I rely mainly on my party or a few donors for major expenses.", "score": 3 },
-        { "text": "I postpone the campaign until funds become available.", "score": 4 }
+        { "text": "I actively pursue grants, partnerships, and innovative funding.", "score": 4 },
+        { "text": "I work with existing budgets and seek some external funds.", "score": 3 },
+        { "text": "I rely on party or government allocations.", "score": 2 },
+        { "text": "I don’t focus on funding; others handle it.", "score": 1 }
       ]
     },
     {
       "id": "Q8",
       "capital": "Financial",
-      "text": "When funds are limited, how do you prioritize political or developmental activities?",
+      "text": "How confident are you in managing budgets or financial oversight?",
       "options": [
-        { "text": "I focus on high-impact activities and use creative, low-cost solutions.", "score": 1 },
-        { "text": "I consult my team to decide which activities to cut or delay.", "score": 2 },
-        { "text": "I reduce engagement and wait for better funding.", "score": 3 },
-        { "text": "I stop most activities until money is available.", "score": 4 }
+        { "text": "Very confident, I closely monitor and optimize budgets.", "score": 4 },
+        { "text": "Somewhat confident, I understand budgets but rely on advisors.", "score": 3 },
+        { "text": "Not confident, I delegate financial decisions.", "score": 2 },
+        { "text": "I avoid financial responsibilities.", "score": 1 }
       ]
     },
     {
       "id": "Q9",
       "capital": "Network",
-      "text": "When solving a public problem requires cooperation across departments, what do you do?",
+      "text": "How extensive is your network of professional or community contacts?",
       "options": [
-        { "text": "I personally reach out to officials, media, and influencers to coordinate joint action.", "score": 1 },
-        { "text": "I ask my team to follow up and connect me only when necessary.", "score": 2 },
-        { "text": "I send formal letters or requests and wait for responses.", "score": 3 },
-        { "text": "I avoid involvement, assuming it’s outside my control.", "score": 4 }
+        { "text": "Very extensive, I maintain strong, diverse connections.", "score": 4 },
+        { "text": "Moderate, I have key contacts but could expand.", "score": 3 },
+        { "text": "Limited, I rely on a small circle of trusted contacts.", "score": 2 },
+        { "text": "I don’t actively maintain a network.", "score": 1 }
       ]
     },
     {
       "id": "Q10",
       "capital": "Network",
-      "text": "How often do you engage journalists, businesspeople, or government officials to strengthen cooperation?",
+      "text": "How often do you leverage your network to advance your goals?",
       "options": [
-        { "text": "Regularly — I maintain active and mutually beneficial relationships.", "score": 1 },
-        { "text": "Occasionally — I reach out only when there’s a pressing issue.", "score": 2 },
-        { "text": "Rarely — I prefer to stay within my political circle.", "score": 3 },
-        { "text": "Never — I feel such connections don’t make much difference.", "score": 4 }
+        { "text": "Frequently, I collaborate with contacts regularly.", "score": 4 },
+        { "text": "Occasionally, when specific needs arise.", "score": 3 },
+        { "text": "Rarely, I prefer to work independently.", "score": 2 },
+        { "text": "Never, I don’t rely on networks.", "score": 1 }
       ]
     },
     {
       "id": "Q11",
       "capital": "Moral",
-      "text": "If you lose an important political opportunity (like a ticket or election), how do you respond?",
+      "text": "How do you handle ethical dilemmas in your political work?",
       "options": [
-        { "text": "I stay committed to my values and continue public work without bitterness.", "score": 1 },
-        { "text": "I reflect, take feedback, and prepare better for the future.", "score": 2 },
-        { "text": "I distance myself temporarily from political activities.", "score": 3 },
-        { "text": "I blame others or withdraw from the process completely.", "score": 4 }
+        { "text": "I follow a strong personal ethical framework and act transparently.", "score": 4 },
+        { "text": "I balance ethics with practical considerations.", "score": 3 },
+        { "text": "I rely on party or legal guidelines for decisions.", "score": 2 },
+        { "text": "I avoid addressing ethical dilemmas.", "score": 1 }
       ]
     },
     {
       "id": "Q12",
       "capital": "Moral",
-      "text": "When a policy decision clashes with your moral values, what stance do you take?",
+      "text": "How do you ensure accountability to your constituents?",
       "options": [
-        { "text": "I voice my concern publicly and stand by my principles.", "score": 1 },
-        { "text": "I raise the issue privately with leadership.", "score": 2 },
-        { "text": "I quietly follow the majority to avoid conflict.", "score": 3 },
-        { "text": "I ignore my discomfort to protect my position.", "score": 4 }
+        { "text": "I regularly report progress and seek feedback.", "score": 4 },
+        { "text": "I address accountability when issues arise.", "score": 3 },
+        { "text": "I rely on my team to handle accountability.", "score": 2 },
+        { "text": "I don’t prioritize accountability.", "score": 1 }
       ]
     }
-  ],
-  "interpretations": {
-    "emerging_leader": "Emerging Leader",
-    "developing_stage": "Developing Stage",
-    "needs_improvement": "Needs Improvement"
-  }
+  ]
+  
 }
