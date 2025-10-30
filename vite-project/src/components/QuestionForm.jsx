@@ -41,7 +41,7 @@ const QuestionForm = () => {
     }
   };
 
-  // REVERSED SCORING: Top = 4, Bottom = 1
+  // REVERSED SCORING: Top = 4, Bottom = 1 (flipped end result)
   const calculateScores = (responses) => {
     const capitals = ['Intellectual', 'Political', 'Social', 'Financial', 'Network', 'Moral'];
     const scores = {};
@@ -54,7 +54,7 @@ const QuestionForm = () => {
       qs.forEach(q => {
         const s = responses[q.id];
         if (s !== undefined) {
-          total += (5 - s);  // ← REVERSED: 1→4, 2→3, 3→2, 4→1
+          total += (5 - s); // ← REVERSE: 1→4, 2→3, 3→2, 4→1
           count++;
         }
       });
@@ -99,10 +99,7 @@ const QuestionForm = () => {
                     : 'bg-indigo-50 hover:bg-indigo-100 border-indigo-200 text-gray-800'
                   }`}
               >
-                <span>{option.text}</span>
-                <span className="float-right text-xs opacity-70">
-                  [{option.score}]
-                </span>
+                {option.text}
               </button>
             );
           })}
