@@ -19,10 +19,17 @@ const Report = () => {
 
   const { name, scores } = state;
 
+  // Reverse scores: 1 → 4, 4 → 1
+  const reversedScores = Object.fromEntries(
+    Object.entries(scores).map(([key, value]) => {
+      const num = parseFloat(value);
+      return [key, isNaN(num) ? 0 : 5 - num];
+    })
+  );
+
   // Safe average calculation
-  const avgScore = Object.values(scores)
-    .map(s => parseFloat(s) || 0)
-    .reduce((sum, score) => sum + score, 0) / 6;
+  const avgScore =
+    Object.values(reversedScores).reduce((sum, score) => sum + score, 0) / 6;
 
   const getInterpretation = (avg) => {
     if (avg >= 3.5) return t.interpretations?.emerging_leader || 'Emerging Leader';
@@ -40,7 +47,7 @@ const Report = () => {
 
       {/* Radar Chart */}
       <div className="my-8">
-        <RadarChartComponent scores={scores} />
+        <RadarChartComponent scores={reversedScores} />
       </div>
 
       {/* Score Summary */}
@@ -49,11 +56,11 @@ const Report = () => {
           Score Summary (Higher = Better)
         </h3>
         <ul className="space-y-2">
-          {Object.entries(scores).map(([capital, score]) => (
+          {Object.entries(reversedScores).map(([capital, score]) => (
             <li key={capital} className="flex justify-between">
               <span className="font-medium text-gray-700">{capital}:</span>
               <span className="font-mono text-indigo-600">
-                {parseFloat(score).toFixed(2)} / 4.0
+                {score.toFixed(2)} / 4.0
               </span>
             </li>
           ))}
