@@ -1,36 +1,28 @@
-# This workflow will run tests using node and then publish a package to GitHub Packages when a release is created
-# For more information see: https://docs.github.com/en/actions/publishing-packages/publishing-nodejs-packages
 
-name: Node.js Package
+name: OIDC-TEST
 
 on:
-  release:
-    types: [created]
+  push:
+     branches: : [main]
+
+permissions:
+  contents: read
+  packages: write
 
 jobs:
-  build:
+  build-oidc:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout code
       - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 20
-      - run: npm ci
-      - run: npm test
 
-  publish-gpr:
-    needs: build
-    runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      packages: write
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - name: Configure AWS Credentials for OIDC
+        uses: aws-actions/configure-aws-credentials@v6.1.0
         with:
-          node-version: 20
-          registry-url: https://npm.pkg.github.com/
-      - run: npm ci
-      - run: npm publish
-        env:
-          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+           audience: sts.amazonaws.com.cn
+           aws-region: us-east-1
+           role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
+           role-session-name: OIDC-Session
+
+      - name: Verify AWS Credentials   
+        run : aws sts get-caller-identity
