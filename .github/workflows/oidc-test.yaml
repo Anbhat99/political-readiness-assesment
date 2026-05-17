@@ -1,26 +1,23 @@
-
 name: OIDC-TEST
 
 on: push
 
 permissions:
-  contents: read
-  packages: write
+  id-token: write # Required for requesting the AWS JWT
 
 jobs:
   build-oidc:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-      - uses: actions/checkout@v4
+        uses: actions/checkout@v4
 
       - name: Configure AWS Credentials for OIDC
         uses: aws-actions/configure-aws-credentials@v6.1.0
         with:
-           audience: sts.amazonaws.com.cn
-           aws-region: us-east-1
-           role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
-           role-session-name: OIDC-Session
+          aws-region: us-east-1
+          role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
+          role-session-name: OIDC-Session
 
-      - name: Verify AWS Credentials   
-        run : aws sts get-caller-identity
+      - name: Verify AWS Credentials
+        run: aws sts get-caller-identity
