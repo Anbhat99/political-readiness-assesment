@@ -1,9 +1,7 @@
 
 name: OIDC-TEST
 
-on:
-  push:
-     branches: : [main]
+on: push
 
 permissions:
   contents: read
